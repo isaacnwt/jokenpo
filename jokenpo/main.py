@@ -1,3 +1,5 @@
+from random import choice
+
 linha = "-" * 50
 
 signalsPt = ["pedra", "papel", "tesoura"]
@@ -12,9 +14,10 @@ def startsTheGame():
     return number_of_rounds
 
 def round(p1_points, p2_points):
-    choice = input("Chose your option: ")
-
-    #if checksAnswer(choice, signalsPt):
+    signal = input("Choose your option: ")
+    
+    print(choice(signalsPt).title())
+    print(linha)
 
 
 
