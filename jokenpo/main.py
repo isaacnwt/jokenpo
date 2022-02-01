@@ -1,30 +1,35 @@
 from random import choice
 
-linha = "-" * 50
+line = "-" * 50
 
 signalsPt = ["pedra", "papel", "tesoura"]
 signalsEn = ["stone", "paper", "scissors"]
 
 def startsTheGame():
-    print(linha)
+    print(line)
     print("JOKENPY")
-    print(linha)
+    print(line)
 
     number_of_rounds = int(input("Set the number of rounds: "))
     return number_of_rounds
 
 def round(p1_points, p2_points):
     signal = input("Choose your option: ")
-    
+
+    while not checksAnswer(signal, signalsPt):
+        print(f"'{signal}' is not a option! Try again...")
+        print(line)
+        signal = input("Choose your option: ")
+
     print(choice(signalsPt).title())
-    print(linha)
+    print(line)
 
 
 
 
 
-def checksAnswer(word, signalList):
-    if word in signalList:
+def checksAnswer(word, options):
+    if word in options:
         return True
     return False
 
