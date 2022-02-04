@@ -18,19 +18,26 @@ def startsTheGame():
 
 # Receives the player signal and choice random a signal
 def round(p1_points, p2_points):
-    signal = input("Choose your option: ")
+    signal = input("Write your option: ")
 
     while not checksAnswer(signal, signalsPt):
         print(f"'{signal}' is not a option! Try again...")
         print(line)
-        signal = input("Choose your option: ")
+        signal = input("Write your option: ")
 
     print(choice(signalsPt).title())
     print(line)
 
-# Returns the winner
-#def comparesValues(p1_signal, p2_signal):
-#    p1_signal = p1_signal.lower()
+# Returns the winner (just an idea)
+def comparesValues(p1_signal, p2_signal):
+    p1_signal = p1_signal.lower()
+
+    if p1_signal == p2_signal:
+        return "tie"
+    elif (p1_signal == "pedra" and p2_signal =="tesoura") or (p1_signal == "tesoura" and p2_signal =="papel") or (p1_signal == "papel" and p2_signal =="pedra"):
+        return "p1"
+    else:
+        return "p2"
 
 def checksAnswer(word, options):
     if word.lower() in options:
